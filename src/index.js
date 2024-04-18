@@ -5,7 +5,7 @@ async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case "list":
       const allContacts = await contacts.listContacts();
-      return console.log(allContacts);
+      return console.table(allContacts);
       
 
     case "get":
@@ -24,7 +24,7 @@ async function invokeAction({ action, id, name, email, phone }) {
       
 
     default:
-      return console.log("\x1B[31m Unknown action type!");
+      return console.warn("\x1B[31m Unknown action type!");
   }
 }
 program
